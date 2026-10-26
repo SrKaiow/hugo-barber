@@ -130,6 +130,17 @@ nav.links a:hover{color:var(--ivory)}nav.links a:hover::after{right:0}
 @media (max-width:1020px){.wall{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.wall{grid-template-columns:1fr}.shot{aspect-ratio:5/4}}
 
+
+/* hugo with players */
+.duo{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:56px}
+.duo-h{grid-column:1/-1;display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.duo-h h3{margin:0;font-family:var(--f-accent);font-style:italic;font-weight:600;font-size:clamp(1.4rem,2.6vw,2rem)}
+.duo figure{margin:0;position:relative;aspect-ratio:3/4;max-width:100%;overflow:hidden;border-radius:6px;border:1px solid #f1c94f55;box-shadow:0 20px 50px -20px #000}
+.duo img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.duo figure:hover img{transform:scale(1.05)}
+.duo figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 12px 12px;background:linear-gradient(transparent,#000e);font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.duo figcaption b{color:var(--gold-2);display:block;font-size:.62rem;letter-spacing:.2em}
+@media (max-width:900px){.duo{grid-template-columns:repeat(2,minmax(0,1fr))}}
 /* services */
 .svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px;margin-top:36px}
 .svc article{position:relative;background:linear-gradient(160deg,var(--piano-3),var(--piano-2));border:1px solid var(--line);border-radius:6px;padding:22px;display:flex;flex-direction:column;gap:8px;overflow:hidden;transition:border-color .3s,transform .3s}
@@ -344,6 +355,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
           </div>
         </div></article>
       </div>
+
+      <div class="duo">
+        <div class="duo-h"><h3 class="gold" data-i18n="duo.t">Hugo with the players</h3></div>
+        <figure><img src="assets/martinelli-hugo.jpg" alt="Hugo with Gabriel Martinelli" loading="lazy" style="object-position:50% 20%"><figcaption><b data-i18n="duo.with">With Hugo</b>Gabriel Martinelli</figcaption></figure>
+        <figure><img src="assets/martinelli-cape.jpg" alt="Hugo cutting Gabriel Martinelli's hair" loading="lazy" style="object-position:50% 20%"><figcaption><b data-i18n="duo.chair">In the chair</b>Gabriel Martinelli</figcaption></figure>
+        <figure><img src="assets/hincapie-hugo.jpg" alt="Hugo with Piero Hincapié" loading="lazy" style="object-position:50% 15%"><figcaption><b data-i18n="duo.with">With Hugo</b>Piero Hincapié</figcaption></figure>
+        <figure><img src="assets/franca-hugo.jpg" alt="Hugo with Matheus França" loading="lazy" style="object-position:50% 25%"><figcaption><b data-i18n="duo.with">With Hugo</b>Matheus França</figcaption></figure>
+      </div>
     </div>
   </section>
 
@@ -508,7 +527,7 @@ const CONFIG = {
 };
 
 const I18N = {
-en:{"nav.players":"Players","nav.services":"Services","nav.work":"Work","nav.reviews":"Reviews","nav.contact":"Contact","cta.book":"Book now","cta.book2":"Book your appointment","cta.players":"See the players' chair",
+en:{"duo.t":"Hugo with the players","duo.with":"With Hugo","duo.chair":"In the chair","nav.players":"Players","nav.services":"Services","nav.work":"Work","nav.reviews":"Reviews","nav.contact":"Contact","cta.book":"Book now","cta.book2":"Book your appointment","cta.players":"See the players' chair",
 "hero.tag":"The barber Premier League players call to their <em>door</em>.","hero.note":"Precision fades, sharp lines and classic cuts. Hugo travels to you anywhere in London, by appointment only.","hero.cap":"In the chair","hero.pill":"Comes to you",
 "st.pros":"Pro players","st.nations":"Nations","st.mobile":"Mobile service",
 "pl.eyebrow":"The players' chair","pl.title":"Trusted by the pros","pl.lede":"Champions, internationals and World Cup players keep their look sharp with Hugo, on match week and off it.",
@@ -537,7 +556,7 @@ en:{"nav.players":"Players","nav.services":"Services","nav.work":"Work","nav.rev
 "s.service":"Service","s.date":"Date","s.time":"Time","s.where":"Address","s.name":"Name",
 "ct.eyebrow":"Contact","ct.title":"Find Hugo","ct.area":"Coverage","ct.areaV":"All of London · mobile"},
 
-pt:{"nav.players":"Jogadores","nav.services":"Serviços","nav.work":"Trabalhos","nav.reviews":"Avaliações","nav.contact":"Contato","cta.book":"Agendar","cta.book2":"Agende seu horário","cta.players":"Ver a cadeira dos craques",
+pt:{"duo.t":"O Hugo com os craques","duo.with":"Com o Hugo","duo.chair":"Na cadeira","nav.players":"Jogadores","nav.services":"Serviços","nav.work":"Trabalhos","nav.reviews":"Avaliações","nav.contact":"Contato","cta.book":"Agendar","cta.book2":"Agende seu horário","cta.players":"Ver a cadeira dos craques",
 "hero.tag":"O barbeiro que os jogadores da Premier League chamam até a sua <em>porta</em>.","hero.note":"Degradês precisos, linhas afiadas e cortes clássicos. O Hugo vai até você em qualquer lugar de Londres, só com hora marcada.","hero.cap":"Na cadeira","hero.pill":"Vai até você",
 "st.pros":"Jogadores pro","st.nations":"Países","st.mobile":"A domicílio",
 "pl.eyebrow":"A cadeira dos craques","pl.title":"A escolha dos profissionais","pl.lede":"Campeões, jogadores de seleção e de Copa do Mundo mantêm o visual em dia com o Hugo, em semana de jogo ou fora dela.",
@@ -566,7 +585,7 @@ pt:{"nav.players":"Jogadores","nav.services":"Serviços","nav.work":"Trabalhos",
 "s.service":"Serviço","s.date":"Data","s.time":"Horário","s.where":"Endereço","s.name":"Nome",
 "ct.eyebrow":"Contato","ct.title":"Fale com o Hugo","ct.area":"Cobertura","ct.areaV":"Toda Londres · a domicílio"},
 
-es:{"nav.players":"Jugadores","nav.services":"Servicios","nav.work":"Trabajos","nav.reviews":"Reseñas","nav.contact":"Contacto","cta.book":"Reservar","cta.book2":"Reserva tu cita","cta.players":"Ver la silla de los cracks",
+es:{"duo.t":"Hugo con los cracks","duo.with":"Con Hugo","duo.chair":"En la silla","nav.players":"Jugadores","nav.services":"Servicios","nav.work":"Trabajos","nav.reviews":"Reseñas","nav.contact":"Contacto","cta.book":"Reservar","cta.book2":"Reserva tu cita","cta.players":"Ver la silla de los cracks",
 "hero.tag":"El barbero que los jugadores de la Premier League llaman a su <em>puerta</em>.","hero.note":"Degradados precisos, líneas definidas y cortes clásicos. Hugo va donde estés en Londres, solo con cita.","hero.cap":"En la silla","hero.pill":"Va donde estés",
 "st.pros":"Jugadores pro","st.nations":"Países","st.mobile":"A domicilio",
 "pl.eyebrow":"La silla de los cracks","pl.title":"La elección de los profesionales","pl.lede":"Campeones, internacionales y mundialistas confían su estilo a Hugo, en semana de partido y fuera de ella.",
@@ -595,7 +614,7 @@ es:{"nav.players":"Jugadores","nav.services":"Servicios","nav.work":"Trabajos","
 "s.service":"Servicio","s.date":"Fecha","s.time":"Hora","s.where":"Dirección","s.name":"Nombre",
 "ct.eyebrow":"Contacto","ct.title":"Encuentra a Hugo","ct.area":"Cobertura","ct.areaV":"Todo Londres · a domicilio"},
 
-fr:{"nav.players":"Joueurs","nav.services":"Prestations","nav.work":"Réalisations","nav.reviews":"Avis","nav.contact":"Contact","cta.book":"Réserver","cta.book2":"Prendre rendez-vous","cta.players":"Voir le fauteuil des pros",
+fr:{"duo.t":"Hugo avec les joueurs","duo.with":"Avec Hugo","duo.chair":"Dans le fauteuil","nav.players":"Joueurs","nav.services":"Prestations","nav.work":"Réalisations","nav.reviews":"Avis","nav.contact":"Contact","cta.book":"Réserver","cta.book2":"Prendre rendez-vous","cta.players":"Voir le fauteuil des pros",
 "hero.tag":"Le barbier que les joueurs de Premier League font venir à leur <em>porte</em>.","hero.note":"Dégradés précis, contours nets et coupes classiques. Hugo se déplace partout à Londres, uniquement sur rendez-vous.","hero.cap":"Dans le fauteuil","hero.pill":"Se déplace chez vous",
 "st.pros":"Joueurs pros","st.nations":"Nations","st.mobile":"À domicile",
 "pl.eyebrow":"Le fauteuil des pros","pl.title":"Le choix des professionnels","pl.lede":"Champions, internationaux et mondialistes confient leur style à Hugo, en semaine de match comme ailleurs.",
